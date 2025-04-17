@@ -6,7 +6,7 @@ function Home() {
     return (  
 
         <div>
-            <div className="h-[70vh] bg-[url('./assets/images/bannerimg8.png')] bg-cover  bg-center "></div>
+            <div className="h-[70vh] bg-[url('/assets/images/bannerimg8.png')] bg-cover  bg-center "></div>
             <div className="flex sm:gap-4 px-3 flex-wrap sm:px-0 gap-1 py-4 sm:justify-center">
                 {
                     categories.map((category ,idx)=>{
