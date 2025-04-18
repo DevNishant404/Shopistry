@@ -11,6 +11,9 @@ function Navbar() {
     const {searchTerm}=useSelector((state)=>state.product)
     const dispatch=useDispatch()
 
+    const cartItems=useSelector((state)=>state.cart.items)
+    const itemCount=cartItems.reduce((total,item)=>total +item.quantity,0)
+
     function handleOnclick(e){
         e.stopPropagation()
         setIsOpen(!isOpen)
@@ -51,7 +54,7 @@ function Navbar() {
             className="bg-gray-200 p-1 cursor-pointer hover:opacity-70 transition duration-150" size={30}></User>
         </div>
         </div>
-        <div className="border-b border-b-gray-300 shadow-sm md:gap-0  gap-3 py-4 md:px-30 flex justify-between  px-4">
+        <div className="border-b  border-b-gray-300 shadow-sm md:gap-0  gap-3 py-4 md:px-30 flex justify-between  px-4">
             <Link to={"/"} className="text-white bg-zinc-800 px-3 py-0.5 font-extrabold rounded  text-xl">Shopistry</Link>
             <form
             className="w-full flex justify-center"
@@ -63,10 +66,16 @@ function Navbar() {
                 className=" w-full md:w-[70%]  outline-none border border-gray-300 rounded-sm  px-3 py-0.5"
                 type="text" placeholder="Search Product" />
             </form>
+            <div className="relative">
             <Link to={"/cart"}>
             <ShoppingCart size={30} className=" cursor-pointer  hover:opacity-70 transition duration-15" />
             </Link>
-
+            
+            {
+                itemCount>0 && <span className="bg-blue-500 text-white flex justify-center absolute -right-3 text-sm -top-2 items-center w-5 rounded-full h-5">{itemCount}</span>
+            }
+            </div>
+           
         </div>
       </header>
      );

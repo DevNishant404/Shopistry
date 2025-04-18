@@ -12,8 +12,8 @@ function ProductCard({product}) {
         return (
             <div
             onClick={()=>openProductDetails(product)}
-            className=" shadow border-gray-200 border rounded cursor-pointer" key={product.id}>
-                <img className="sm:h-[260px] h-[200px] w-full object-cover border-b border-gray-200 rounded" src={product.image} alt="" />
+            className=" shadow border-gray-200 border rounded cursor-pointer overflow-hidden" key={product.id}>
+                <img className="sm:h-[260px] h-[200px] w-full object-cover hover:scale-105 transition duration-150 border-b border-gray-200 rounded" src={product.image} alt="" />
                 <div className="p-3 border-b border-gray-200">
                 <h3>{product.title.substring(0,20)+"..."}</h3>
                 <p className="tracking-tight leading-4 text-sm text-gray-600">{product.description.substring(0,50)+"..."}</p>
