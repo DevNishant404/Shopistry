@@ -1,6 +1,18 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 function ProductCard({product}) {
+    const navigate=useNavigate()
+    const [currentProduct,setCurrentProduct]=useState()
+
+        function openProductDetails(){
+            navigate(`/product/${product.id}`)
+            
+            }
         return (
-            <div className=" shadow border-gray-200 border rounded cursor-pointer" key={product.id}>
+            <div
+            onClick={()=>openProductDetails(product)}
+            className=" shadow border-gray-200 border rounded cursor-pointer" key={product.id}>
                 <img className="sm:h-[260px] h-[200px] w-full object-cover border-b border-gray-200 rounded" src={product.image} alt="" />
                 <div className="p-3 border-b border-gray-200">
                 <h3>{product.title.substring(0,20)+"..."}</h3>

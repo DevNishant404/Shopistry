@@ -1,11 +1,15 @@
 import { ShoppingCart, User } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { setSearchTerm } from "../features/products/productSlice";
 
 
 function Navbar() {
 
     const [isOpen,setIsOpen]=useState(false)
+    const {searchTerm}=useSelector((state)=>state.product)
+    const dispatch=useDispatch()
 
     function handleOnclick(e){
         e.stopPropagation()
@@ -13,6 +17,9 @@ function Navbar() {
         console.log(isOpen)
 
     }
+
+
+
 
     useEffect(()=>{
         document.addEventListener("click",()=>{
@@ -35,7 +42,7 @@ function Navbar() {
         <div className="flex relative">
             <div
             onClick={(e)=>e.stopPropagation()}
-            className={`border shadow border-gray-200 w-30 rounded ${isOpen? "flex flex-col" :"hidden"} absolute right-8 top-5 bg-white`}>
+            className={`border shadow border-gray-200 w-40 rounded ${isOpen? "flex flex-col" :"hidden"} absolute right-8 top-5 bg-white`}>
                 <span className="px-3 hover:bg-gray-100 cursor-pointer transition duration-150">Sign</span>
                 <span className="px-3 hover:bg-gray-100 cursor-pointer transition duration-150">My Account</span>
             </div>
@@ -50,7 +57,10 @@ function Navbar() {
             className="w-full flex justify-center"
             action="">
                 <input
-                className=" w-full md:w-[70%]  outline-none border rounded-sm border-zinc-900 px-3 py-0.5"
+                onChange={(e)=>dispatch(setSearchTerm(e.target.value))}
+                value={searchTerm}
+
+                className=" w-full md:w-[70%]  outline-none border border-gray-300 rounded-sm  px-3 py-0.5"
                 type="text" placeholder="Search Product" />
             </form>
             <Link to={"/cart"}>
