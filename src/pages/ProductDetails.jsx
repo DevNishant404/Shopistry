@@ -21,7 +21,7 @@ function ProductDetails() {
                 <p className="font-bold mb-1">${product.price}</p>
                 <p className="font-semibold mb-2">Category <br />{product.category}</p>
                 <button
-                onClick={()=>dispatch(addToCart(id))}
+                onClick={()=>dispatch(addToCart(product))}
                 className="flex gap-3 bg-gray-200 px-3 py-0.5 hover:bg-gray-300 rounded transition duration-150 cursor-pointer"><ShoppingCart /> Add to Cart</button>
             </div>
         </div>
