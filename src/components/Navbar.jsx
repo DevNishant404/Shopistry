@@ -69,11 +69,12 @@ function Navbar() {
             <div className="relative">
             <Link to={"/cart"}>
             <ShoppingCart size={30} className=" cursor-pointer  hover:opacity-70 transition duration-15" />
-            </Link>
+            
             
             {
                 itemCount>0 && <span className="bg-blue-500 text-white flex justify-center absolute -right-3 text-sm -top-2 items-center w-5 rounded-full h-5">{itemCount}</span>
             }
+            </Link>
             </div>
            
         </div>

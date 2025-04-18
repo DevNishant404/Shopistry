@@ -1,8 +1,10 @@
 import { Minus, Plus, Trash } from "lucide-react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { removeCart, updateQuantity } from "../features/cart/cartSlice";
 
 function Cart() {
+  const dispatch=useDispatch()
 
   const cartItem=useSelector((state)=>state.cart.items)
 
@@ -36,16 +38,25 @@ function Cart() {
                       <Link to={`/product/${addedCartItem.id}`} className="font-semibold">{addedCartItem.title}</Link>
                       <p className="font-semibold text-blue-500 text-sm">${addedCartItem.price}</p>
                       <div className="flex items-center gap-2">
-                      <button className="bg-gray-100 hover:bg-gray-200 transition duration-150 rounded-full ">
+                      <button 
+                      onClick={()=>{dispatch(updateQuantity({id:addedCartItem.id, quantity:Math.max(0,addedCartItem.quantity -1)}))}}
+                      className="bg-gray-100 hover:bg-gray-200 transition duration-150 rounded-full ">
                       <Minus size={16}></Minus>
                       </button>
                       <span className="text-sm">{addedCartItem.quantity}</span>
-                      <button className="bg-gray-100 hover:bg-gray-200 transition duration-150 rounded-full">
+                      <button
+                      onClick={()=>dispatch(updateQuantity({id:addedCartItem.id,quantity:addedCartItem.quantity+1}))}
+                      className="bg-gray-100 hover:bg-gray-200 transition duration-150  rounded-full">
                         <Plus size={16}></Plus>
                       </button>
-                      <Trash size={16} className="text-red-600"></Trash>
+                      <Trash
+                      onClick={()=>dispatch(removeCart(addedCartItem.id))}
+                      size={16} className="text-red-600 cursor-pointer"></Trash>
                       </div>
                       
+                    </div>
+                    <div className="flex text-right  justify-end pr-5 flex-1">
+                      <p className="font-semibold">${addedCartItem.price *addedCartItem.quantity}</p>
                     </div>
                     </div>
                   )
