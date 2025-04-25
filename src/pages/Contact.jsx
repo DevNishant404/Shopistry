@@ -1,5 +1,5 @@
 import { LocateIcon, MailPlus, MapPinned, Phone, Twitter } from "lucide-react";
-import contact from "../../public/assets/images/contact.png"
+import contact from "/assets/images/contact.png"
 function Contact() {
     return ( 
 

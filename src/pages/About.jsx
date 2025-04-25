@@ -1,4 +1,4 @@
-import aboutus from "../../public/assets/images/aboutus.png";
+import aboutus from "/assets/images/aboutUs.png";
 function About() {
   return (
     <div className="md:px-30 px-3 min-h-[70vh]">
