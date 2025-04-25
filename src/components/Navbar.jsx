@@ -46,8 +46,8 @@ function Navbar() {
             <div
             onClick={(e)=>e.stopPropagation()}
             className={`border shadow border-gray-200 w-40 rounded ${isOpen? "flex flex-col" :"hidden"} absolute right-8 top-5 bg-white`}>
-                <span className="px-3 hover:bg-gray-100 cursor-pointer transition duration-150">Sign</span>
-                <span className="px-3 hover:bg-gray-100 cursor-pointer transition duration-150">My Account</span>
+                <span className="px-3 hover:bg-gray-100 cursor-pointer transition duration-150 py-0.5">Sign</span>
+                <span className="px-3 hover:bg-gray-100 cursor-pointer transition duration-150 py-0.5">My Account</span>
             </div>
             <User
             onClick={(e)=>handleOnclick(e)}
