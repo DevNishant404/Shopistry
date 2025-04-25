@@ -12,7 +12,7 @@ function Cart() {
 
   if(cartItem.length===0){
     return(
-      <div className="w-fit mx-auto text-center mt-10 ">
+      <div className="w-fit mx-auto text-center mt-10 min-h-[70vh] ">
         <h2 className="font-semibold">Your Cart is Empty</h2>
         <p className="text-gray-600 mb-4">Add Some Products to Your Cart to see them here</p>
         <Link className="border border-gray-200 shadow px-3 py-0.5 hover:bg-gray-200 transition duration-150 " to={"/"}>Continue Shopping</Link>
@@ -21,7 +21,7 @@ function Cart() {
   }
 
     return (
-        <div className="md:px-30 px-3 py-1">
+        <div className="md:px-30 px-3 py-1 min-h-[70vh]">
           <p className="text-xl font-semibold mb-2">Shopping Cart</p>
           <div className="flex sm:flex-row flex-col gap-4  ">
             <div className="lg:w-[60%] sm:w-[70%] border w-full flex flex-col gap-2 border-gray-200 shadow">

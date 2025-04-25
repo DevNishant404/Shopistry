@@ -36,10 +36,10 @@ function Navbar() {
         <div className="flex justify-between items-center shadow-sm border-b border-b-gray-300   py-3 font-medium md:px-30 px-4 ">
         <nav>
             <ul className="flex gap-4">
-                <li className="cursor-pointer font-medium">Home</li>
-                <li className="cursor-pointer font-medium">About</li>
-                <li className="cursor-pointer font-medium">FAQs</li>
-                <li className="cursor-pointer font-medium">Contact</li>
+                <Link to={"/"} className="cursor-pointer font-medium">Home</Link>
+                <Link to={"/about"} className="cursor-pointer font-medium">About</Link>
+                <Link to={"/faq's"} className="cursor-pointer font-medium">FAQs</Link>
+                <Link to={"/contact"} className="cursor-pointer font-medium">Contact</Link>
             </ul>
         </nav>
         <div className="flex relative">

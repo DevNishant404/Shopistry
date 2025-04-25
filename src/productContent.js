@@ -201,4 +201,39 @@ export const categories=[
 "Phones",
 "Cloths"
 ]
+
+export const faqs=[
+  {
+    heading:"How can I place an order?",
+    para:"Browse our products, add items to your cart, and follow the checkout process. It's simple and secure!"
+  },
+  {
+    heading:"What payment methods do you accept?",
+    para:"We accept all major credit/debit cards, UPI, net banking, and popular wallets like Paytm, Google Pay, and PhonePe."
+  },
+  {
+    heading:"How long does delivery take?",
+    para:"Standard shipping usually takes 3–7 business days, depending on your location. Express shipping options are also available at checkout."
+  },
+  {
+    heading:"Can I track my order?",
+    para:"Yes! Once your order ships, you'll receive a tracking link via email or SMS."
+  },
+  {
+    heading:" What is your return policy?",
+    para:"We offer a hassle-free return policy within [7/14/30] days of delivery. Items must be unused and in original packaging."
+  },
+  {
+    heading:"How do I contact customer support?",
+    para:"You can reach us at [support@yourdomain.com] or through our live chat, available from 10 AM to 6 PM (Mon–Sat)."
+  },
+  {
+    heading:"Do you ship internationally?",
+    para:"Currently, we only ship within [India/your country], but we're working on expanding soon!"
+  },
+  {
+    heading:"Are my payment details secure?",
+    para:"Absolutely. We use secure SSL encryption and partner with trusted payment gateways to protect your data."
+  },
+]
   
